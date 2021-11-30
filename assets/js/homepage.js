@@ -35,6 +35,9 @@ fetch(apiUrl).then(function(response) {
   else {
     alert("Error: GitHub User Not Found");
   }
+})
+.catch(function(error) {
+  alert("Unable to connect to GitHub");
 });
 };
 
@@ -48,8 +51,6 @@ var displayRepos = function(repos, searchTerm) {
   //clear old content
   repoContainerEl.textContent = "";
   repoSearchTerm.textContent = searchTerm;
-  console.log(repos);
-  console.log(searchTerm);
 
   //loop over repos
   for (var i = 0; i < repos.length; i++) {
